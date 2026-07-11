@@ -1,371 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 280" width="820" height="280">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#020617"/>
-      <stop offset="100%" stop-color="#0f172a"/>
-    </linearGradient>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#c084fc"/>
-    </linearGradient>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&amp;family=Inter:wght@400;600&amp;display=swap');
-      
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
+      @keyframes slideUp {
+        from { opacity: 0; transform: translateY(18px); }
+        to   { opacity: 1; transform: translateY(0); }
       }
-      @keyframes pulse {
-        0%, 100% { opacity: 0.2; r: 2; }
-        50% { opacity: 1; r: 4; fill: #38bdf8; filter: drop-shadow(0 0 5px #38bdf8); }
+      @keyframes expandLine {
+        from { stroke-dashoffset: 300; }
+        to   { stroke-dashoffset: 0; }
       }
-      @keyframes dataFlow {
-        0% { stroke-dashoffset: 200; opacity: 0; }
-        20% { opacity: 1; }
-        80% { opacity: 1; }
-        100% { stroke-dashoffset: 0; opacity: 0; }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
       }
-      @keyframes typing {
-        from { width: 0; }
-        to { width: 100%; }
-      }
-      .bg-rect { fill: url(#bg); }
-      .connection { stroke: #1e293b; stroke-width: 1; opacity: 0.5; }
-      .data { 
-        stroke: url(#textGrad); 
-        stroke-width: 1.5; 
-        stroke-dasharray: 10 190; 
-      }
-      .node { fill: #475569; }
-      .title-container { animation: float 6s ease-in-out infinite; }
-      .title {
-        font-family: 'Fira Code', monospace;
-        font-size: 64px;
+      .name {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 52px;
         font-weight: 700;
-        fill: #ffffff;
-        text-anchor: middle;
+        letter-spacing: -1.5px;
+        fill: #f1f5f9;
+        animation: slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
       }
-      .subtitle {
-        font-family: 'Inter', sans-serif;
+      .role {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
         font-size: 16px;
         font-weight: 400;
-        fill: #94a3b8;
-        text-anchor: middle;
-        letter-spacing: 4px;
+        fill: #64748b;
+        letter-spacing: 0.5px;
+        animation: slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
       }
-      .highlight { fill: url(#textGrad); }
+      .dot {
+        fill: #38bdf8;
+        animation: fadeIn 0.4s ease 0.8s both;
+      }
+      .accent-line {
+        stroke: #38bdf8;
+        stroke-width: 2;
+        stroke-dasharray: 300;
+        stroke-dashoffset: 300;
+        animation: expandLine 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+      }
+      .tag {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        fill: #475569;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        animation: fadeIn 0.6s ease 0.9s both;
+      }
+      .divider {
+        stroke: #1e293b;
+        stroke-width: 1;
+        animation: fadeIn 0.6s ease 0.4s both;
+      }
     </style>
   </defs>
 
-  <rect width="800" height="300" class="bg-rect" rx="15"/>
-  
-  <g class="network">
-    <line x1="421" y1="25" x2="342" y2="30" class="connection" />
-    <line x1="421" y1="25" x2="342" y2="30" class="data" style="animation: dataFlow 2.5308097177704214s linear infinite 1.3012006233092683s;" />
-    <line x1="421" y1="25" x2="562" y2="63" class="connection" />
-    <line x1="421" y1="25" x2="344" y2="96" class="connection" />
-    <line x1="421" y1="25" x2="273" y2="21" class="connection" />
-    <line x1="421" y1="25" x2="473" y2="92" class="connection" />
-    <line x1="421" y1="25" x2="456" y2="18" class="connection" />
-    <line x1="421" y1="25" x2="456" y2="18" class="data" style="animation: dataFlow 4.443490625742101s linear infinite 1.2126427497957621s;" />
-    <line x1="421" y1="25" x2="281" y2="4" class="connection" />
-    <line x1="102" y1="95" x2="112" y2="69" class="connection" />
-    <line x1="102" y1="95" x2="86" y2="8" class="connection" />
-    <line x1="102" y1="95" x2="86" y2="8" class="data" style="animation: dataFlow 2.6739991087186334s linear infinite 0.5422059644735922s;" />
-    <line x1="102" y1="95" x2="203" y2="173" class="connection" />
-    <line x1="102" y1="95" x2="152" y2="98" class="connection" />
-    <line x1="102" y1="95" x2="152" y2="98" class="data" style="animation: dataFlow 4.914480787903916s linear infinite 3.4250508579254686s;" />
-    <line x1="102" y1="95" x2="192" y2="84" class="connection" />
-    <line x1="102" y1="95" x2="46" y2="93" class="connection" />
-    <line x1="102" y1="95" x2="204" y2="106" class="connection" />
-    <line x1="102" y1="95" x2="47" y2="125" class="connection" />
-    <line x1="769" y1="217" x2="739" y2="210" class="connection" />
-    <line x1="769" y1="217" x2="711" y2="289" class="connection" />
-    <line x1="769" y1="217" x2="672" y2="141" class="connection" />
-    <line x1="769" y1="217" x2="672" y2="141" class="data" style="animation: dataFlow 2.1666752905733846s linear infinite 0.22165305746654762s;" />
-    <line x1="769" y1="217" x2="653" y2="212" class="connection" />
-    <line x1="769" y1="217" x2="698" y2="257" class="connection" />
-    <line x1="769" y1="217" x2="703" y2="193" class="connection" />
-    <line x1="486" y1="263" x2="470" y2="221" class="connection" />
-    <line x1="486" y1="263" x2="554" y2="150" class="connection" />
-    <line x1="486" y1="263" x2="550" y2="231" class="connection" />
-    <line x1="486" y1="263" x2="466" y2="234" class="connection" />
-    <line x1="486" y1="263" x2="606" y2="211" class="connection" />
-    <line x1="486" y1="263" x2="606" y2="211" class="data" style="animation: dataFlow 3.8397587233642927s linear infinite 0.642445023157176s;" />
-    <line x1="486" y1="263" x2="435" y2="256" class="connection" />
-    <line x1="486" y1="263" x2="435" y2="256" class="data" style="animation: dataFlow 3.501464678022351s linear infinite 0.5275519075414165s;" />
-    <line x1="486" y1="263" x2="421" y2="298" class="connection" />
-    <line x1="486" y1="263" x2="534" y2="273" class="connection" />
-    <line x1="486" y1="263" x2="367" y2="274" class="connection" />
-    <line x1="486" y1="263" x2="367" y2="274" class="data" style="animation: dataFlow 2.265779950527436s linear infinite 4.9356368391053485s;" />
-    <line x1="486" y1="263" x2="564" y2="149" class="connection" />
-    <line x1="486" y1="263" x2="579" y2="170" class="connection" />
-    <line x1="486" y1="263" x2="500" y2="222" class="connection" />
-    <line x1="486" y1="263" x2="500" y2="222" class="data" style="animation: dataFlow 3.767578394816371s linear infinite 1.499323010935358s;" />
-    <line x1="342" y1="30" x2="344" y2="96" class="connection" />
-    <line x1="342" y1="30" x2="273" y2="21" class="connection" />
-    <line x1="342" y1="30" x2="273" y2="21" class="data" style="animation: dataFlow 2.464988406570298s linear infinite 3.0361570859755442s;" />
-    <line x1="342" y1="30" x2="264" y2="33" class="connection" />
-    <line x1="342" y1="30" x2="264" y2="33" class="data" style="animation: dataFlow 4.753910199407655s linear infinite 0.4753245727328348s;" />
-    <line x1="342" y1="30" x2="473" y2="92" class="connection" />
-    <line x1="342" y1="30" x2="456" y2="18" class="connection" />
-    <line x1="342" y1="30" x2="281" y2="4" class="connection" />
-    <line x1="342" y1="30" x2="262" y2="59" class="connection" />
-    <line x1="342" y1="30" x2="262" y2="59" class="data" style="animation: dataFlow 3.1123200374264886s linear infinite 1.5131316294689219s;" />
-    <line x1="112" y1="69" x2="86" y2="8" class="connection" />
-    <line x1="112" y1="69" x2="203" y2="173" class="connection" />
-    <line x1="112" y1="69" x2="203" y2="173" class="data" style="animation: dataFlow 4.963678547255823s linear infinite 0.33666001545256785s;" />
-    <line x1="112" y1="69" x2="152" y2="98" class="connection" />
-    <line x1="112" y1="69" x2="192" y2="84" class="connection" />
-    <line x1="112" y1="69" x2="46" y2="93" class="connection" />
-    <line x1="112" y1="69" x2="204" y2="106" class="connection" />
-    <line x1="112" y1="69" x2="47" y2="125" class="connection" />
-    <line x1="739" y1="210" x2="711" y2="289" class="connection" />
-    <line x1="739" y1="210" x2="672" y2="141" class="connection" />
-    <line x1="739" y1="210" x2="606" y2="211" class="connection" />
-    <line x1="739" y1="210" x2="653" y2="212" class="connection" />
-    <line x1="739" y1="210" x2="698" y2="257" class="connection" />
-    <line x1="739" y1="210" x2="698" y2="257" class="data" style="animation: dataFlow 4.306680634263165s linear infinite 0.9635861171933796s;" />
-    <line x1="739" y1="210" x2="703" y2="193" class="connection" />
-    <line x1="470" y1="221" x2="328" y2="230" class="connection" />
-    <line x1="470" y1="221" x2="328" y2="230" class="data" style="animation: dataFlow 4.0998178850678455s linear infinite 4.966388027363021s;" />
-    <line x1="470" y1="221" x2="554" y2="150" class="connection" />
-    <line x1="470" y1="221" x2="550" y2="231" class="connection" />
-    <line x1="470" y1="221" x2="466" y2="234" class="connection" />
-    <line x1="470" y1="221" x2="606" y2="211" class="connection" />
-    <line x1="470" y1="221" x2="435" y2="256" class="connection" />
-    <line x1="470" y1="221" x2="421" y2="298" class="connection" />
-    <line x1="470" y1="221" x2="534" y2="273" class="connection" />
-    <line x1="470" y1="221" x2="473" y2="92" class="connection" />
-    <line x1="470" y1="221" x2="367" y2="274" class="connection" />
-    <line x1="470" y1="221" x2="564" y2="149" class="connection" />
-    <line x1="470" y1="221" x2="564" y2="149" class="data" style="animation: dataFlow 2.7731196767360498s linear infinite 4.033620225517983s;" />
-    <line x1="470" y1="221" x2="579" y2="170" class="connection" />
-    <line x1="470" y1="221" x2="579" y2="170" class="data" style="animation: dataFlow 2.9683048827773386s linear infinite 1.064168237609221s;" />
-    <line x1="470" y1="221" x2="500" y2="222" class="connection" />
-    <line x1="328" y1="230" x2="344" y2="96" class="connection" />
-    <line x1="328" y1="230" x2="203" y2="173" class="connection" />
-    <line x1="328" y1="230" x2="466" y2="234" class="connection" />
-    <line x1="328" y1="230" x2="435" y2="256" class="connection" />
-    <line x1="328" y1="230" x2="421" y2="298" class="connection" />
-    <line x1="328" y1="230" x2="421" y2="298" class="data" style="animation: dataFlow 3.2306904334367017s linear infinite 0.9870344142506893s;" />
-    <line x1="328" y1="230" x2="367" y2="274" class="connection" />
-    <line x1="328" y1="230" x2="312" y2="224" class="connection" />
-    <line x1="86" y1="8" x2="152" y2="98" class="connection" />
-    <line x1="86" y1="8" x2="192" y2="84" class="connection" />
-    <line x1="86" y1="8" x2="192" y2="84" class="data" style="animation: dataFlow 2.2440100569951396s linear infinite 3.8466975883084324s;" />
-    <line x1="86" y1="8" x2="46" y2="93" class="connection" />
-    <line x1="86" y1="8" x2="47" y2="125" class="connection" />
-    <line x1="86" y1="8" x2="47" y2="125" class="data" style="animation: dataFlow 2.0266612658272543s linear infinite 0.24284111959443133s;" />
-    <line x1="554" y1="150" x2="562" y2="63" class="connection" />
-    <line x1="554" y1="150" x2="672" y2="141" class="connection" />
-    <line x1="554" y1="150" x2="550" y2="231" class="connection" />
-    <line x1="554" y1="150" x2="466" y2="234" class="connection" />
-    <line x1="554" y1="150" x2="606" y2="211" class="connection" />
-    <line x1="554" y1="150" x2="606" y2="211" class="data" style="animation: dataFlow 3.1519817753890407s linear infinite 4.273655582128739s;" />
-    <line x1="554" y1="150" x2="534" y2="273" class="connection" />
-    <line x1="554" y1="150" x2="473" y2="92" class="connection" />
-    <line x1="554" y1="150" x2="653" y2="212" class="connection" />
-    <line x1="554" y1="150" x2="653" y2="212" class="data" style="animation: dataFlow 4.704811124777967s linear infinite 1.090163313235768s;" />
-    <line x1="554" y1="150" x2="605" y2="27" class="connection" />
-    <line x1="554" y1="150" x2="564" y2="149" class="connection" />
-    <line x1="554" y1="150" x2="579" y2="170" class="connection" />
-    <line x1="554" y1="150" x2="579" y2="170" class="data" style="animation: dataFlow 4.2081563567271365s linear infinite 1.7667900578872198s;" />
-    <line x1="554" y1="150" x2="500" y2="222" class="connection" />
-    <line x1="562" y1="63" x2="672" y2="141" class="connection" />
-    <line x1="562" y1="63" x2="473" y2="92" class="connection" />
-    <line x1="562" y1="63" x2="456" y2="18" class="connection" />
-    <line x1="562" y1="63" x2="605" y2="27" class="connection" />
-    <line x1="562" y1="63" x2="564" y2="149" class="connection" />
-    <line x1="562" y1="63" x2="579" y2="170" class="connection" />
-    <line x1="562" y1="63" x2="579" y2="170" class="data" style="animation: dataFlow 4.832992479100053s linear infinite 2.6006135330293s;" />
-    <line x1="344" y1="96" x2="273" y2="21" class="connection" />
-    <line x1="344" y1="96" x2="264" y2="33" class="connection" />
-    <line x1="344" y1="96" x2="473" y2="92" class="connection" />
-    <line x1="344" y1="96" x2="456" y2="18" class="connection" />
-    <line x1="344" y1="96" x2="456" y2="18" class="data" style="animation: dataFlow 4.927727378299717s linear infinite 0.7542507472403492s;" />
-    <line x1="344" y1="96" x2="281" y2="4" class="connection" />
-    <line x1="344" y1="96" x2="204" y2="106" class="connection" />
-    <line x1="344" y1="96" x2="204" y2="106" class="data" style="animation: dataFlow 4.698631923674739s linear infinite 0.8983078472097117s;" />
-    <line x1="344" y1="96" x2="312" y2="224" class="connection" />
-    <line x1="344" y1="96" x2="312" y2="224" class="data" style="animation: dataFlow 2.1083286270577286s linear infinite 1.1005199305522835s;" />
-    <line x1="344" y1="96" x2="262" y2="59" class="connection" />
-    <line x1="203" y1="173" x2="152" y2="98" class="connection" />
-    <line x1="203" y1="173" x2="192" y2="84" class="connection" />
-    <line x1="203" y1="173" x2="192" y2="84" class="data" style="animation: dataFlow 2.270956345598175s linear infinite 1.0669170783052735s;" />
-    <line x1="203" y1="173" x2="204" y2="106" class="connection" />
-    <line x1="203" y1="173" x2="312" y2="224" class="connection" />
-    <line x1="203" y1="173" x2="312" y2="224" class="data" style="animation: dataFlow 2.5728182180634676s linear infinite 3.108629006333566s;" />
-    <line x1="203" y1="173" x2="262" y2="59" class="connection" />
-    <line x1="273" y1="21" x2="264" y2="33" class="connection" />
-    <line x1="273" y1="21" x2="152" y2="98" class="connection" />
-    <line x1="273" y1="21" x2="281" y2="4" class="connection" />
-    <line x1="273" y1="21" x2="192" y2="84" class="connection" />
-    <line x1="273" y1="21" x2="192" y2="84" class="data" style="animation: dataFlow 2.786806084752381s linear infinite 3.494856606128246s;" />
-    <line x1="273" y1="21" x2="204" y2="106" class="connection" />
-    <line x1="273" y1="21" x2="262" y2="59" class="connection" />
-    <line x1="264" y1="33" x2="152" y2="98" class="connection" />
-    <line x1="264" y1="33" x2="281" y2="4" class="connection" />
-    <line x1="264" y1="33" x2="281" y2="4" class="data" style="animation: dataFlow 4.542649446737668s linear infinite 3.037969595004093s;" />
-    <line x1="264" y1="33" x2="192" y2="84" class="connection" />
-    <line x1="264" y1="33" x2="192" y2="84" class="data" style="animation: dataFlow 2.1917526629615782s linear infinite 4.271597078329467s;" />
-    <line x1="264" y1="33" x2="204" y2="106" class="connection" />
-    <line x1="264" y1="33" x2="262" y2="59" class="connection" />
-    <line x1="711" y1="289" x2="606" y2="211" class="connection" />
-    <line x1="711" y1="289" x2="653" y2="212" class="connection" />
-    <line x1="711" y1="289" x2="698" y2="257" class="connection" />
-    <line x1="711" y1="289" x2="703" y2="193" class="connection" />
-    <line x1="711" y1="289" x2="703" y2="193" class="data" style="animation: dataFlow 3.5790692177770884s linear infinite 1.6770153882222527s;" />
-    <line x1="672" y1="141" x2="606" y2="211" class="connection" />
-    <line x1="672" y1="141" x2="653" y2="212" class="connection" />
-    <line x1="672" y1="141" x2="605" y2="27" class="connection" />
-    <line x1="672" y1="141" x2="564" y2="149" class="connection" />
-    <line x1="672" y1="141" x2="564" y2="149" class="data" style="animation: dataFlow 4.7118236277457335s linear infinite 4.0531479259356935s;" />
-    <line x1="672" y1="141" x2="698" y2="257" class="connection" />
-    <line x1="672" y1="141" x2="579" y2="170" class="connection" />
-    <line x1="672" y1="141" x2="703" y2="193" class="connection" />
-    <line x1="672" y1="141" x2="703" y2="193" class="data" style="animation: dataFlow 2.6431735798477027s linear infinite 1.2084979795795947s;" />
-    <line x1="550" y1="231" x2="466" y2="234" class="connection" />
-    <line x1="550" y1="231" x2="606" y2="211" class="connection" />
-    <line x1="550" y1="231" x2="606" y2="211" class="data" style="animation: dataFlow 2.7503397128298115s linear infinite 3.2511355798369594s;" />
-    <line x1="550" y1="231" x2="435" y2="256" class="connection" />
-    <line x1="550" y1="231" x2="421" y2="298" class="connection" />
-    <line x1="550" y1="231" x2="534" y2="273" class="connection" />
-    <line x1="550" y1="231" x2="653" y2="212" class="connection" />
-    <line x1="550" y1="231" x2="564" y2="149" class="connection" />
-    <line x1="550" y1="231" x2="564" y2="149" class="data" style="animation: dataFlow 2.1062956555696664s linear infinite 3.1182598532995054s;" />
-    <line x1="550" y1="231" x2="579" y2="170" class="connection" />
-    <line x1="550" y1="231" x2="579" y2="170" class="data" style="animation: dataFlow 2.6126536031170797s linear infinite 3.776365938643958s;" />
-    <line x1="550" y1="231" x2="500" y2="222" class="connection" />
-    <line x1="466" y1="234" x2="606" y2="211" class="connection" />
-    <line x1="466" y1="234" x2="606" y2="211" class="data" style="animation: dataFlow 2.397695143352399s linear infinite 2.7069855331820425s;" />
-    <line x1="466" y1="234" x2="435" y2="256" class="connection" />
-    <line x1="466" y1="234" x2="435" y2="256" class="data" style="animation: dataFlow 3.6818617947064887s linear infinite 0.20946752087839526s;" />
-    <line x1="466" y1="234" x2="421" y2="298" class="connection" />
-    <line x1="466" y1="234" x2="534" y2="273" class="connection" />
-    <line x1="466" y1="234" x2="473" y2="92" class="connection" />
-    <line x1="466" y1="234" x2="473" y2="92" class="data" style="animation: dataFlow 2.0662322792307606s linear infinite 4.541934086267534s;" />
-    <line x1="466" y1="234" x2="367" y2="274" class="connection" />
-    <line x1="466" y1="234" x2="564" y2="149" class="connection" />
-    <line x1="466" y1="234" x2="579" y2="170" class="connection" />
-    <line x1="466" y1="234" x2="500" y2="222" class="connection" />
-    <line x1="606" y1="211" x2="534" y2="273" class="connection" />
-    <line x1="606" y1="211" x2="653" y2="212" class="connection" />
-    <line x1="606" y1="211" x2="653" y2="212" class="data" style="animation: dataFlow 2.4867458266087534s linear infinite 2.8431144959121175s;" />
-    <line x1="606" y1="211" x2="564" y2="149" class="connection" />
-    <line x1="606" y1="211" x2="564" y2="149" class="data" style="animation: dataFlow 2.7701794101311688s linear infinite 0.1909654997292265s;" />
-    <line x1="606" y1="211" x2="698" y2="257" class="connection" />
-    <line x1="606" y1="211" x2="579" y2="170" class="connection" />
-    <line x1="606" y1="211" x2="500" y2="222" class="connection" />
-    <line x1="606" y1="211" x2="703" y2="193" class="connection" />
-    <line x1="606" y1="211" x2="703" y2="193" class="data" style="animation: dataFlow 4.22051292379232s linear infinite 1.3833884369834992s;" />
-    <line x1="435" y1="256" x2="421" y2="298" class="connection" />
-    <line x1="435" y1="256" x2="534" y2="273" class="connection" />
-    <line x1="435" y1="256" x2="534" y2="273" class="data" style="animation: dataFlow 4.541280840837734s linear infinite 1.4520768281235412s;" />
-    <line x1="435" y1="256" x2="367" y2="274" class="connection" />
-    <line x1="435" y1="256" x2="500" y2="222" class="connection" />
-    <line x1="435" y1="256" x2="500" y2="222" class="data" style="animation: dataFlow 3.0047019703049553s linear infinite 2.8793524015928074s;" />
-    <line x1="435" y1="256" x2="312" y2="224" class="connection" />
-    <line x1="421" y1="298" x2="534" y2="273" class="connection" />
-    <line x1="421" y1="298" x2="367" y2="274" class="connection" />
-    <line x1="421" y1="298" x2="500" y2="222" class="connection" />
-    <line x1="421" y1="298" x2="312" y2="224" class="connection" />
-    <line x1="534" y1="273" x2="653" y2="212" class="connection" />
-    <line x1="534" y1="273" x2="564" y2="149" class="connection" />
-    <line x1="534" y1="273" x2="579" y2="170" class="connection" />
-    <line x1="534" y1="273" x2="500" y2="222" class="connection" />
-    <line x1="473" y1="92" x2="456" y2="18" class="connection" />
-    <line x1="473" y1="92" x2="605" y2="27" class="connection" />
-    <line x1="473" y1="92" x2="564" y2="149" class="connection" />
-    <line x1="473" y1="92" x2="579" y2="170" class="connection" />
-    <line x1="473" y1="92" x2="500" y2="222" class="connection" />
-    <line x1="473" y1="92" x2="500" y2="222" class="data" style="animation: dataFlow 3.9190729549169965s linear infinite 0.2811993313344363s;" />
-    <line x1="367" y1="274" x2="500" y2="222" class="connection" />
-    <line x1="367" y1="274" x2="312" y2="224" class="connection" />
-    <line x1="653" y1="212" x2="564" y2="149" class="connection" />
-    <line x1="653" y1="212" x2="698" y2="257" class="connection" />
-    <line x1="653" y1="212" x2="579" y2="170" class="connection" />
-    <line x1="653" y1="212" x2="703" y2="193" class="connection" />
-    <line x1="456" y1="18" x2="605" y2="27" class="connection" />
-    <line x1="152" y1="98" x2="192" y2="84" class="connection" />
-    <line x1="152" y1="98" x2="192" y2="84" class="data" style="animation: dataFlow 2.4383411961777863s linear infinite 3.7139145071541875s;" />
-    <line x1="152" y1="98" x2="46" y2="93" class="connection" />
-    <line x1="152" y1="98" x2="204" y2="106" class="connection" />
-    <line x1="152" y1="98" x2="204" y2="106" class="data" style="animation: dataFlow 2.4340301675212688s linear infinite 0.6769398505600172s;" />
-    <line x1="152" y1="98" x2="47" y2="125" class="connection" />
-    <line x1="152" y1="98" x2="262" y2="59" class="connection" />
-    <line x1="281" y1="4" x2="192" y2="84" class="connection" />
-    <line x1="281" y1="4" x2="204" y2="106" class="connection" />
-    <line x1="281" y1="4" x2="204" y2="106" class="data" style="animation: dataFlow 4.553170046378975s linear infinite 0.1117542753156181s;" />
-    <line x1="281" y1="4" x2="262" y2="59" class="connection" />
-    <line x1="281" y1="4" x2="262" y2="59" class="data" style="animation: dataFlow 4.803531886652387s linear infinite 3.9050939897572374s;" />
-    <line x1="192" y1="84" x2="46" y2="93" class="connection" />
-    <line x1="192" y1="84" x2="46" y2="93" class="data" style="animation: dataFlow 4.659562158300174s linear infinite 3.637980476837547s;" />
-    <line x1="192" y1="84" x2="204" y2="106" class="connection" />
-    <line x1="192" y1="84" x2="262" y2="59" class="connection" />
-    <line x1="605" y1="27" x2="564" y2="149" class="connection" />
-    <line x1="605" y1="27" x2="564" y2="149" class="data" style="animation: dataFlow 2.108715126994689s linear infinite 1.1140209581365963s;" />
-    <line x1="605" y1="27" x2="579" y2="170" class="connection" />
-    <line x1="605" y1="27" x2="579" y2="170" class="data" style="animation: dataFlow 2.092141149207503s linear infinite 0.551867607202311s;" />
-    <line x1="564" y1="149" x2="579" y2="170" class="connection" />
-    <line x1="564" y1="149" x2="500" y2="222" class="connection" />
-    <line x1="564" y1="149" x2="703" y2="193" class="connection" />
-    <line x1="46" y1="93" x2="47" y2="125" class="connection" />
-    <line x1="698" y1="257" x2="579" y2="170" class="connection" />
-    <line x1="698" y1="257" x2="703" y2="193" class="connection" />
-    <line x1="579" y1="170" x2="500" y2="222" class="connection" />
-    <line x1="579" y1="170" x2="703" y2="193" class="connection" />
-    <line x1="204" y1="106" x2="262" y2="59" class="connection" />
-    <circle cx="421" cy="25" r="2" class="node" style="animation: pulse 3s infinite 2.3152498603522065s;" />
-    <circle cx="102" cy="95" r="2" class="node" style="animation: pulse 3s infinite 1.8555614339260993s;" />
-    <circle cx="769" cy="217" r="2" class="node" style="animation: pulse 3s infinite 0.6955355160309795s;" />
-    <circle cx="486" cy="263" r="2" class="node" style="animation: pulse 3s infinite 0.5924950363997452s;" />
-    <circle cx="342" cy="30" r="2" class="node" style="animation: pulse 3s infinite 2.2355699698883895s;" />
-    <circle cx="112" cy="69" r="2" class="node" style="animation: pulse 3s infinite 1.7313811448801926s;" />
-    <circle cx="739" cy="210" r="2" class="node" style="animation: pulse 3s infinite 2.749654805447281s;" />
-    <circle cx="470" cy="221" r="2" class="node" style="animation: pulse 3s infinite 1.9736255738228925s;" />
-    <circle cx="328" cy="230" r="2" class="node" style="animation: pulse 3s infinite 2.489968137348378s;" />
-    <circle cx="86" cy="8" r="2" class="node" style="animation: pulse 3s infinite 2.470336031339686s;" />
-    <circle cx="554" cy="150" r="2" class="node" style="animation: pulse 3s infinite 0.7608690718228575s;" />
-    <circle cx="562" cy="63" r="2" class="node" style="animation: pulse 3s infinite 0.11997367246054824s;" />
-    <circle cx="344" cy="96" r="2" class="node" style="animation: pulse 3s infinite 0.5139719421531318s;" />
-    <circle cx="203" cy="173" r="2" class="node" style="animation: pulse 3s infinite 1.453690039176134s;" />
-    <circle cx="273" cy="21" r="2" class="node" style="animation: pulse 3s infinite 1.3094150751872964s;" />
-    <circle cx="264" cy="33" r="2" class="node" style="animation: pulse 3s infinite 0.6339212256419569s;" />
-    <circle cx="711" cy="289" r="2" class="node" style="animation: pulse 3s infinite 0.7797848961086544s;" />
-    <circle cx="672" cy="141" r="2" class="node" style="animation: pulse 3s infinite 2.115355362229311s;" />
-    <circle cx="550" cy="231" r="2" class="node" style="animation: pulse 3s infinite 2.2111893414577244s;" />
-    <circle cx="466" cy="234" r="2" class="node" style="animation: pulse 3s infinite 1.9660493193259678s;" />
-    <circle cx="606" cy="211" r="2" class="node" style="animation: pulse 3s infinite 0.6091736391090528s;" />
-    <circle cx="435" cy="256" r="2" class="node" style="animation: pulse 3s infinite 1.531172874663315s;" />
-    <circle cx="421" cy="298" r="2" class="node" style="animation: pulse 3s infinite 1.9346736319633688s;" />
-    <circle cx="534" cy="273" r="2" class="node" style="animation: pulse 3s infinite 0.3371814931271093s;" />
-    <circle cx="473" cy="92" r="2" class="node" style="animation: pulse 3s infinite 0.9057973778389182s;" />
-    <circle cx="367" cy="274" r="2" class="node" style="animation: pulse 3s infinite 1.1696784100426938s;" />
-    <circle cx="653" cy="212" r="2" class="node" style="animation: pulse 3s infinite 1.584673564744393s;" />
-    <circle cx="456" cy="18" r="2" class="node" style="animation: pulse 3s infinite 1.0757036853548283s;" />
-    <circle cx="152" cy="98" r="2" class="node" style="animation: pulse 3s infinite 2.217106285940484s;" />
-    <circle cx="281" cy="4" r="2" class="node" style="animation: pulse 3s infinite 0.447759946516601s;" />
-    <circle cx="192" cy="84" r="2" class="node" style="animation: pulse 3s infinite 2.420072135383657s;" />
-    <circle cx="605" cy="27" r="2" class="node" style="animation: pulse 3s infinite 2.6713634977237706s;" />
-    <circle cx="564" cy="149" r="2" class="node" style="animation: pulse 3s infinite 1.607483833611448s;" />
-    <circle cx="46" cy="93" r="2" class="node" style="animation: pulse 3s infinite 1.871881977834374s;" />
-    <circle cx="698" cy="257" r="2" class="node" style="animation: pulse 3s infinite 2.1211032561534005s;" />
-    <circle cx="579" cy="170" r="2" class="node" style="animation: pulse 3s infinite 1.9966775779653116s;" />
-    <circle cx="204" cy="106" r="2" class="node" style="animation: pulse 3s infinite 2.1072881860781183s;" />
-    <circle cx="500" cy="222" r="2" class="node" style="animation: pulse 3s infinite 0.7422606950377579s;" />
-    <circle cx="312" cy="224" r="2" class="node" style="animation: pulse 3s infinite 0.8490291887943097s;" />
-    <circle cx="47" cy="125" r="2" class="node" style="animation: pulse 3s infinite 0.6574875574742801s;" />
-    <circle cx="262" cy="59" r="2" class="node" style="animation: pulse 3s infinite 0.49310116007473326s;" />
-    <circle cx="703" cy="193" r="2" class="node" style="animation: pulse 3s infinite 0.4293877170325505s;" />
+  <!-- Background -->
+  <rect width="820" height="280" fill="#0d1117"/>
 
-  </g>
+  <!-- Left vertical rule -->
+  <line x1="52" y1="60" x2="52" y2="220" class="divider"/>
 
-  <!-- Text overlay -->
-  <g class="title-container" transform="translate(400, 150)">
-    <!-- Simulated glowing box behind text -->
-    <rect x="-200" y="-60" width="400" height="120" fill="#020617" opacity="0.7" rx="10" />
-    <text y="10" class="title">NITHISSH<tspan class="highlight">.</tspan></text>
-    <text y="40" class="subtitle">AI/ML ENGINEER &amp; FULL-STACK</text>
-  </g>
+  <!-- Accent line (horizontal, under name) -->
+  <line x1="72" y1="158" x2="372" y2="158" class="accent-line"/>
+
+  <!-- Name -->
+  <text x="72" y="148" class="name">Nithissh<tspan class="dot">.</tspan></text>
+
+  <!-- Role line -->
+  <text x="74" y="185" class="role">AI / ML Engineer  ·  Full-Stack Developer</text>
+
+  <!-- Tags row -->
+  <text x="74" y="218" class="tag">Next.js  ·  Python  ·  PyTorch  ·  TypeScript</text>
+
 </svg>
