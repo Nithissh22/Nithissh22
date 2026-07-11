@@ -1,11 +1,9 @@
 <div align="center">
-  <a href="https://github.com/Nithissh22">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&duration=4000&pause=1000&color=38BDF8&center=true&vCenter=true&width=800&height=100&lines=Initialize+Neural+Network...;Model+Loaded.+Status:+Online.;Hi%2C+I'm+Nithissh.+AI%2FML+Engineer.;Building+high-performance+interfaces.;Bridging+Intelligence+and+Design." alt="Typing SVG" />
-  </a>
-</div>
-
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:0ea5e9&height=120&section=header&text=&fontSize=70&fontColor=ffffff&fontAlignY=40&animation=twinkling" width="100%" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="animated_banner.svg">
+    <source media="(prefers-color-scheme: light)" srcset="animated_banner.svg">
+    <img src="animated_banner.svg" width="100%" alt="Animated Neural Network Banner" />
+  </picture>
 </div>
 
 <div align="center">
