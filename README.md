@@ -90,7 +90,6 @@
 
 <!-- Connect/Socials -->
 <div align="center">
-  <a href="mailto:your.email@example.com"><img src="https://skillicons.dev/icons?i=gmail" /></a>
-  <a href="https://linkedin.com/in/yourprofile"><img src="https://skillicons.dev/icons?i=linkedin" /></a>
-  <a href="https://twitter.com/yourprofile"><img src="https://skillicons.dev/icons?i=twitter" /></a>
+  <a href="mailto:24nithissh@gmail.com"><img src="https://skillicons.dev/icons?i=gmail" /></a>
+  <a href="https://linkedin.com/in/[your-linkedin-username]"><img src="https://skillicons.dev/icons?i=linkedin" /></a>
 </div>
